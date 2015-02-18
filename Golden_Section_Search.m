@@ -4,11 +4,11 @@
 
 % initial parameters
 a = 0;                                         % start of interval 
-b = 3;                                          % end of interval
+b = 2.75;                                          % end of interval
 epsilon = 0.0001;                             % accuracy value
 ratio = double((sqrt(5)-1)/2);                  % golden proportion coefficient, aroud 0.618
 k = 0;                                          % number of iterations
-iter = 50;                                       % maximun number of iterations
+iter = 500;                                       % maximun number of iterations
 
 len = b-a;
 x1 = b - ratio * len;                           % computing x1;
@@ -17,7 +17,7 @@ f1=f(x1);
 f2=f(x2);
 FE=0;                                           % functional evaluation
 fprintf(1,'interation: %d, FE=%d',k,FE);
-fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(0.4507)));
+fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(1.5907)));
 fprintf(1,'interval:(%g,%g),x1=%g,x2=%g,f(x1)=%g,f(x2)=%g,length=%g\n',a,b,x1,x2,f1,f2,len);
 % search
 while(((b-a) > epsilon) && (k<iter))
@@ -32,9 +32,9 @@ while(((b-a) > epsilon) && (k<iter))
             f2=f(x2);
             FE=FE+1;
             k=k+1;
-            errors(k) = abs(f((a+b)/2)-f(0.4507));
+            errors(k) = abs(f((a+b)/2)-f(1.5907));
             fprintf(1,'interation: %d, FE=%d',k,FE);    
-            fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(0.4507)));
+            fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(1.5907)));
             fprintf(1,'interval:(%g,%g),x1=%g,x2=%g,f(x1)=%g,f(x2)=%g,length=%g\n',a,b,x1,x2,f1,f2,len);
     else
 
@@ -46,15 +46,15 @@ while(((b-a) > epsilon) && (k<iter))
             f2=f(x2);
             FE=FE+1;
             k=k+1;
-            errors(k) = abs(f((a+b)/2)-f(0.4507));
+            errors(k) = abs(f((a+b)/2)-f(1.5907));
             fprintf(1,'interation: %d, FE=%d',k,FE);
-            fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(0.4507)));
+            fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(1.5907)));
             fprintf(1,'interval:(%g,%g),x1=%g,x2=%g,f(x1)=%g,f(x2)=%g,length=%g\n',a,b,x1,x2,f1,f2,len);
     end 
     
 end
 fprintf(1,'interation: %d, FE=%d',k,FE);
-fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(0.4507)));
+fprintf(1,'error:%g\n',abs(f((a+b)/2)-f(1.5907)));
 fprintf(1,'interval:(%g,%g),x1=%g,x2=%g,f(x1)=%g,f(x2)=%g,length=%g\n',a,b,x1,x2,f1,f2,len);
 
 
